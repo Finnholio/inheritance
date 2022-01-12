@@ -13,7 +13,7 @@ typedef struct person
 }
 person;
 
-const int GENERATIONS = 2;
+const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
 
 person *create_family(int generations);
@@ -77,6 +77,10 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
+    if (p == NULL)
+    {
+        return;
+    }
 
     // TODO: Free parents
     if (p->parents[0] != NULL && p->parents[1] != NULL)
